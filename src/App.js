@@ -4,29 +4,7 @@ import { withAuth } from '@okta/okta-react';
 
 import logo from './chuck-norris.png';
 import './App.css';
-
-const useAuth = auth => {
-  const [authenticated, setAuthenticated] = useState(null);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    auth.isAuthenticated().then(isAuthenticated => {
-      if (isAuthenticated !== authenticated) {
-        setAuthenticated(isAuthenticated);
-      }
-    });
-  });
-
-  useEffect(() => {
-    if (authenticated) {
-      auth.getUser().then(setUser);
-    } else {
-      setUser(null);
-    }
-  }, [authenticated]);
-
-  return [authenticated, user];
-};
+import { useAuth } from './auth';
 
 const App = withAuth(({ auth }) => {
   const [joke, setJoke] = useState('');
