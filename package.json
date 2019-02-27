@@ -1,7 +1,7 @@
 {
   "name": "okta-react-example",
   "version": "0.1.0",
-  "private": true,
+  "license": "Apache-2.0",
   "dependencies": {
     "@okta/okta-react": "1.2.0",
     "he": "1.2.0",
